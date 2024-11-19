@@ -23,8 +23,6 @@ jobs:
         run: npm install cypress --save-dev
 
       - name: Run cypress tests
-        run: npx cypress run
-      with:
-        browser: chrome
-
-
+        uses: npx cypress run
+        with:
+          browser: chrome
