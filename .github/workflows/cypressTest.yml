@@ -26,7 +26,7 @@ jobs:
         uses: actions/setup-node@v3
 
       - name: Install Cypress
-        run: npm install cypress --save-dev
+        run: npx install cypress
 
       - name: Run cypress tests
         run: npx cypress run
