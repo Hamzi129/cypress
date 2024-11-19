@@ -9,9 +9,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: npm install
-
   cypress-run:
     runs-on: ubuntu-22.04
     #needs: install-and-build # This ensures this job runs only after 'install-and-build' finishes
