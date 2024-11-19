@@ -14,12 +14,12 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+      - name: Install Cypress
+        run: npm install cypress
 
   cypress-run:
     runs-on: ubuntu-22.04 # You can use the same or a different environment for each job
     needs: install-and-build # This ensures this job runs only after 'install-and-build' finishes
     steps:
-      - name: Install Cypress
-        run: npm install cypress
       - name: Run cypress tests
         run: npx cypress run
