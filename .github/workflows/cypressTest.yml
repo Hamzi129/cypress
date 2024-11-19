@@ -19,10 +19,14 @@ jobs:
     runs-on: ubuntu-22.04
     needs: install-and-build # This ensures this job runs only after 'install-and-build' finishes
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+
       - name: Install Cypress
         run: npm install cypress --save-dev
 
       - name: Run cypress tests
-        uses: npx cypress run
-        with:
-          browser: chrome
+        run: npx cypress run
