@@ -15,7 +15,7 @@ describe("Demo WebShop", () => {
     register.clickRegisterButton();
     register.verifyRegistration();
   });
-
+//comment
   it("Login a user with registered randomEmail/Password", () => {
     Login.loginButton();
     Login.addEmail();
