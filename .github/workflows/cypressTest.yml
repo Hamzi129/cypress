@@ -26,4 +26,4 @@ jobs:
         uses: actions/setup-node@v3
 
       - name: Run Cypress tests in Chrome
-        uses: cypress-io/github-action@v6
+        run: npx cypress run
