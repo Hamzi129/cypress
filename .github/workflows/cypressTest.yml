@@ -13,17 +13,13 @@ jobs:
         uses: actions/setup-node@v3
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
   cypress-run:
     runs-on: ubuntu-22.04 # You can use the same or a different environment for each job
     needs: install-and-build # This ensures this job runs only after 'install-and-build' finishes
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-
-      - name: Run Cypress tests in Chrome
+      - name: Install Cypress
+        run: npx cypress install
+      - name: Run cypress tests
         run: npx cypress run
